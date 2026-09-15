@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE } from "../data/site.js";
+---
+
+<Layout title="Home">
+  <section data-section="hero">
+    <img
+      src="https://picsum.photos/seed/agikuyu-hero/1600/700"
+      alt="Agĩkũyũ elders and family"
+      width="1600"
+      height="700"
+    />
+    <div>
+      <h1>Our Culture. Our Language. Our Identity.</h1>
+      <p>We preserve, promote and celebrate Agĩkũyũ wisdom for present and future generations.</p>
+      <a href="/bookshop">Explore Books</a>
+      <a href="/programmes">Learn Gĩkũyũ</a>
+    </div>
+  </section>
+
+  <section data-section="what-we-do">
+    <h2>What We Do</h2>
+    <div data-grid="cards">
+      <article>
+        <img src="https://picsum.photos/seed/card-bookshop/500/350" alt="Bookshop" width="500" height="350" />
+        <h3>Bookshop</h3>
+        <p>Browse and buy books on Agĩkũyũ culture, language, history, spirituality and more.</p>
+        <a href="/bookshop">Shop Now</a>
+      </article>
+
+      <article>
+        <img src="https://picsum.photos/seed/card-language/500/350" alt="Learn Gĩkũyũ" width="500" height="350" />
+        <h3>Learn Gĩkũyũ</h3>
+        <p>An overview of our language-learning programme — full modules are coming via a dedicated app.</p>
+        <a href="/programmes#gikuyu-language">Learn More</a>
+      </article>
+
+      <article>
+        <img src="https://picsum.photos/seed/card-research/500/350" alt="Research & Publications" width="500" height="350" />
+        <h3>Research &amp; Publications</h3>
+        <p>Explore our research projects, publications and academic resources.</p>
+        <a href="/research">Explore</a>
+      </article>
+
+      <article>
+        <img src="https://picsum.photos/seed/card-partner/500/350" alt="Partner With Us" width="500" height="350" />
+        <h3>Partner With Us</h3>
+        <p>Partner with us to support culture, language education, research and community initiatives.</p>
+        <a href="/partner">Partner With Us</a>
+      </article>
+
+      <article>
+        <img src="https://picsum.photos/seed/card-programmes/500/350" alt="Programmes" width="500" height="350" />
+        <h3>Programmes</h3>
+        <p>Discover our programmes for women, men, youth, children and communities.</p>
+        <a href="/programmes">View Programmes</a>
+      </article>
+    </div>
+  </section>
+
+  <section data-section="gallery">
+    <h2>Gallery</h2>
+    <div data-grid="gallery">
+      <img src="https://picsum.photos/seed/gallery-1/500/500" alt="Community event" width="500" height="500" />
+      <img src="https://picsum.photos/seed/gallery-2/500/500" alt="Cultural ceremony" width="500" height="500" />
+      <img src="https://picsum.photos/seed/gallery-3/500/500" alt="Bookshop titles" width="500" height="500" />
+      <img src="https://picsum.photos/seed/gallery-4/500/500" alt="Youth workshop" width="500" height="500" />
+    </div>
+  </section>
+
+  <section data-section="cta-strip">
+    <p>Get in touch: {SITE.phone} · {SITE.email}</p>
+  </section>
+</Layout>

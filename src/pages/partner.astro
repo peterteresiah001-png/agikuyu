@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Partner With Us">
+  <section data-section="partner-hero">
+    <img src="https://picsum.photos/seed/partner-hero/1400/450" alt="Partner With Us" width="1400" height="450" />
+    <h1>Partner With Us</h1>
+    <p>
+      We work with sponsors, collaborators and institutions who want to support culture, language
+      education, research and community initiatives.
+    </p>
+  </section>
+
+  <section data-section="partner-areas">
+    <div data-grid="partner-areas">
+      <article>
+        <img src="https://picsum.photos/seed/partner-1/500/350" alt="Sponsorship" width="500" height="350" />
+        <h3>Sponsorship</h3>
+        <p>Support a programme, publication, or community event.</p>
+      </article>
+      <article>
+        <img src="https://picsum.photos/seed/partner-2/500/350" alt="Research collaboration" width="500" height="350" />
+        <h3>Research Collaboration</h3>
+        <p>Partner with us on research projects and joint publications.</p>
+      </article>
+      <article>
+        <img src="https://picsum.photos/seed/partner-3/500/350" alt="Institutional partnership" width="500" height="350" />
+        <h3>Institutional Partnership</h3>
+        <p>Work with us as a school, museum, or cultural organisation.</p>
+      </article>
+    </div>
+  </section>
+
+  <section data-section="partner-form">
+    <h2>Partnership Enquiry</h2>
+    <form data-form="partner-enquiry">
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Organisation
+        <input type="text" name="organisation" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        How would you like to partner with us?
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit">Send Enquiry via WhatsApp</button>
+    </form>
+  </section>
+</Layout>
+
+<script>
+  import { whatsappLink } from "../data/site.js";
+
+  const form = document.querySelector('form[data-form="partner-enquiry"]');
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form as HTMLFormElement);
+    const name = data.get("name");
+    const organisation = data.get("organisation") || "N/A";
+    const email = data.get("email");
+    const message = data.get("message");
+
+    const text = `Partnership Enquiry\nName: ${name}\nOrganisation: ${organisation}\nEmail: ${email}\nMessage: ${message}`;
+    window.open(whatsappLink(text), "_blank");
+  });
+</script>

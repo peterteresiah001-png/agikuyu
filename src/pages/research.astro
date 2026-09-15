@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { publications } from "../data/publications.js";
+---
+
+<Layout title="Research & Publications">
+  <section data-section="research-hero">
+    <img src="https://picsum.photos/seed/research-hero/1400/450" alt="Research & Publications" width="1400" height="450" />
+    <h1>Research &amp; Publications</h1>
+    <p>Read or download our research papers and articles below — freely, with no unlocking fee.</p>
+  </section>
+
+  <section data-section="publications-grid">
+    <div data-grid="publications">
+      {publications.map((pub) => (
+        <article data-publication-id={pub.id}>
+          <img src={pub.image} alt={pub.title} width="600" height="400" loading="lazy" />
+          <p data-tag>{pub.type} · {pub.year}</p>
+          <h3>{pub.title}</h3>
+          <p>{pub.summary}</p>
+          <a href={pub.fileUrl} download>Download PDF</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

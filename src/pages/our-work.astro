@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const workAreas = [
+  {
+    title: "Research Initiatives",
+    image: "https://picsum.photos/seed/work-research/700/500",
+    description: "Ongoing research projects documenting Agĩkũyũ history, language and social life.",
+  },
+  {
+    title: "Partnerships",
+    image: "https://picsum.photos/seed/work-partnerships/700/500",
+    description: "Collaborations with cultural institutions, schools and community organisations.",
+  },
+  {
+    title: "Cultural Programmes",
+    image: "https://picsum.photos/seed/work-culture/700/500",
+    description: "Events, gatherings and initiatives that bring Agĩkũyũ culture into everyday community life.",
+  },
+];
+---
+
+<Layout title="Our Work">
+  <section data-section="our-work-hero">
+    <img src="https://picsum.photos/seed/our-work-hero/1400/450" alt="Our Work" width="1400" height="450" />
+    <h1>Our Work</h1>
+    <p>Research, partnerships and cultural programmes — brought together in one place.</p>
+  </section>
+
+  <section data-section="work-list">
+    {workAreas.map((area, i) => (
+      <div data-row={i % 2 === 0 ? "normal" : "reversed"}>
+        <img src={area.image} alt={area.title} width="700" height="500" />
+        <div>
+          <h2>{area.title}</h2>
+          <p>{area.description}</p>
+        </div>
+      </div>
+    ))}
+  </section>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { programmes } from "../data/programmes.js";
+---
+
+<Layout title="Programmes">
+  <section data-section="programmes-hero">
+    <img src="https://picsum.photos/seed/programmes-hero/1400/450" alt="Programmes" width="1400" height="450" />
+    <h1>Programmes</h1>
+    <p>Programmes for women, men, youth, children, communities, and Gĩkũyũ language learning.</p>
+  </section>
+
+  <section data-section="programmes-grid">
+    <div data-grid="programmes">
+      {programmes.map((p) => (
+        <article id={p.id} data-programme-id={p.id}>
+          <img src={p.image} alt={p.title} width="700" height="500" loading="lazy" />
+          <h3>{p.title}</h3>
+          <p>{p.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section data-section="app-notice">
+    <img src="https://picsum.photos/seed/language-app/900/400" alt="Gĩkũyũ language app coming soon" width="900" height="400" />
+    <h2>Gĩkũyũ Language Learning App — Coming Soon</h2>
+    <p>
+      Interactive lessons and modules for learning Gĩkũyũ will be delivered through a dedicated mobile app.
+      This website shares programme information only; the app itself is being planned separately.
+    </p>
+  </section>
+</Layout>
