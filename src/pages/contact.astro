@@ -4,43 +4,52 @@ import { SITE } from "../data/site.js";
 ---
 
 <Layout title="Contact">
-  <section data-section="contact-hero">
-    <img src="https://picsum.photos/seed/contact-hero/1400/450" alt="Contact us" width="1400" height="450" />
-    <h1>Contact</h1>
-  </section>
-
-  <section data-section="contact-details">
-    <div>
-      <h3>Phone</h3>
-      <p>{SITE.phone}</p>
-    </div>
-    <div>
-      <h3>Email</h3>
-      <p>{SITE.email}</p>
-    </div>
-    <div>
-      <h3>Location</h3>
-      <p>{SITE.location}</p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/contact-hero/1600/700" alt="Contact us" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Get In Touch</p>
+      <h1 class="hero-title">Contact <em>Us</em></h1>
     </div>
   </section>
 
-  <section data-section="contact-form">
-    <h2>Send Us a Message</h2>
-    <form data-form="contact">
-      <label>
-        Name
-        <input type="text" name="name" required />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="4" required></textarea>
-      </label>
-      <button type="submit">Send via WhatsApp</button>
-    </form>
+  <section class="section-wrap tight">
+    <div class="contact-grid">
+      <a href={`tel:${SITE.phone}`} class="contact-tile reveal">
+        <span class="contact-label">Phone</span>
+        <span class="contact-detail">{SITE.phone}</span>
+      </a>
+      <a href={`mailto:${SITE.email}`} class="contact-tile reveal d1">
+        <span class="contact-label">Email</span>
+        <span class="contact-detail">{SITE.email}</span>
+      </a>
+      <div class="contact-tile reveal d2">
+        <span class="contact-label">Location</span>
+        <span class="contact-detail">{SITE.location}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wrap tight" style="background: var(--bg-parchment);">
+    <div class="eyebrow center" style="justify-content:center;">Message Us</div>
+    <h2 class="section-title center">Send Us <em>a Message</em></h2>
+    <div class="form-card reveal" style="margin-top: 44px;">
+      <form data-form="contact">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">Send via WhatsApp</button>
+      </form>
+    </div>
   </section>
 </Layout>
 

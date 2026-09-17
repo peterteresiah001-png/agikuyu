@@ -2,55 +2,60 @@
 import { SITE } from "../data/site.js";
 ---
 
-<footer>
-  <div>
-    <h3>{SITE.name}</h3>
-    <p>{SITE.tagline}</p>
-  </div>
+<footer id="siteFooter">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-brand-name">{SITE.name}</div>
+        <p class="footer-brand-text">{SITE.tagline}</p>
+      </div>
 
-  <div>
-    <h4>Quick Links</h4>
-    <ul>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/bookshop">Bookshop</a></li>
-      <li><a href="/programmes">Programmes</a></li>
-      <li><a href="/research">Research &amp; Publications</a></li>
-      <li><a href="/partner">Partner With Us</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Quick Links</div>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/bookshop">Bookshop</a></li>
+          <li><a href="/programmes">Programmes</a></li>
+          <li><a href="/research">Research &amp; Publications</a></li>
+          <li><a href="/partner">Partner With Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
 
-  <div>
-    <h4>Contact</h4>
-    <p>{SITE.email}</p>
-    <p>{SITE.phone}</p>
-    <p>{SITE.location}</p>
-  </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <p>{SITE.email}</p>
+        <p>{SITE.phone}</p>
+        <p>{SITE.location}</p>
+      </div>
 
-  <div>
-    <h4>Stay Connected</h4>
-    <form action="#" method="post" data-form="newsletter">
-      <input type="email" name="email" placeholder="Your email address" required />
-      <button type="submit">Subscribe</button>
-    </form>
-    <div>
-      <a href={SITE.social.facebook}>Facebook</a>
-      <a href={SITE.social.instagram}>Instagram</a>
-      <a href={SITE.social.twitter}>Twitter</a>
-      <a href={SITE.social.youtube}>YouTube</a>
+      <div class="footer-col footer-newsletter">
+        <div class="footer-col-title">Stay Connected</div>
+        <form action="#" method="post" data-form="newsletter">
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button type="submit">Join</button>
+        </form>
+        <div class="footer-socials">
+          <a href={SITE.social.facebook} aria-label="Facebook">FB</a>
+          <a href={SITE.social.instagram} aria-label="Instagram">IG</a>
+          <a href={SITE.social.twitter} aria-label="Twitter">TW</a>
+          <a href={SITE.social.youtube} aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; {new Date().getFullYear()} {SITE.name}. All Rights Reserved.</p>
     </div>
   </div>
-
-  <p>&copy; {new Date().getFullYear()} {SITE.name}. All Rights Reserved.</p>
 </footer>
 
 <script>
-  // Placeholder handler — wire this up to an email provider (Mailchimp, Buttondown, etc.) later.
   document.querySelectorAll('form[data-form="newsletter"]').forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       alert("Thanks for subscribing! (connect this form to your email list provider)");
-      form.reset();
+      (form as HTMLFormElement).reset();
     });
   });
 </script>

@@ -5,28 +5,36 @@ import { books } from "../data/books.js";
 ---
 
 <Layout title="Bookshop">
-  <section data-section="bookshop-hero">
-    <img src="https://picsum.photos/seed/bookshop-hero/1400/450" alt="Bookshop" width="1400" height="450" />
-    <h1>Bookshop</h1>
-    <p>
-      Browse our titles below. This is an informational catalogue — there is no online checkout.
-      Tap "Order via WhatsApp" on any book to message us directly and arrange purchase and delivery.
-    </p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/bookshop-hero/1600/700" alt="Bookshop" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Bookshop</p>
+      <h1 class="hero-title">Books on Agĩkũyũ <em>Heritage</em></h1>
+      <p class="hero-sub">
+        Browse our titles below. This is an informational catalogue — there is no online checkout.
+        Tap "Order via WhatsApp" on any book to message us directly and arrange purchase and delivery.
+      </p>
+    </div>
   </section>
 
-  <section data-section="book-grid">
-    <div data-grid="books">
-      {books.map((book) => (
-        <article data-book-id={book.id}>
-          <img src={book.image} alt={book.title} width="600" height="800" loading="lazy" />
-          <p data-tag>{book.category}</p>
-          <h3>{book.title}</h3>
-          <p>{book.description}</p>
-          <p data-price>Ksh {book.price.toLocaleString()}</p>
-          <WhatsAppButton
-            label="Order via WhatsApp"
-            message={`Hi! I'm interested in buying "${book.title}" (Ksh ${book.price.toLocaleString()}). Is it available?`}
-          />
+  <section class="section-wrap">
+    <div class="grid-4">
+      {books.map((book, i) => (
+        <article class={`card reveal ${i % 4 === 1 ? "d1" : i % 4 === 2 ? "d2" : i % 4 === 3 ? "d3" : ""}`} data-book-id={book.id}>
+          <img class="card-img portrait" src={book.image} alt={book.title} width="600" height="800" loading="lazy" />
+          <div class="card-body">
+            <p class="card-tag">{book.category}</p>
+            <h3 class="card-title">{book.title}</h3>
+            <p class="card-desc">{book.description}</p>
+            <p class="card-price">Ksh {book.price.toLocaleString()}</p>
+            <div class="card-cta">
+              <WhatsAppButton
+                label="Order via WhatsApp"
+                message={`Hi! I'm interested in buying "${book.title}" (Ksh ${book.price.toLocaleString()}). Is it available?`}
+              />
+            </div>
+          </div>
         </article>
       ))}
     </div>

@@ -4,21 +4,27 @@ import { publications } from "../data/publications.js";
 ---
 
 <Layout title="Research & Publications">
-  <section data-section="research-hero">
-    <img src="https://picsum.photos/seed/research-hero/1400/450" alt="Research & Publications" width="1400" height="450" />
-    <h1>Research &amp; Publications</h1>
-    <p>Read or download our research papers and articles below — freely, with no unlocking fee.</p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/research-hero/1600/700" alt="Research & Publications" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Knowledge &amp; Scholarship</p>
+      <h1 class="hero-title">Research &amp; <em>Publications</em></h1>
+      <p class="hero-sub">Read or download our research papers and articles below — freely, with no unlocking fee.</p>
+    </div>
   </section>
 
-  <section data-section="publications-grid">
-    <div data-grid="publications">
-      {publications.map((pub) => (
-        <article data-publication-id={pub.id}>
-          <img src={pub.image} alt={pub.title} width="600" height="400" loading="lazy" />
-          <p data-tag>{pub.type} · {pub.year}</p>
-          <h3>{pub.title}</h3>
-          <p>{pub.summary}</p>
-          <a href={pub.fileUrl} download>Download PDF</a>
+  <section class="section-wrap">
+    <div class="grid-3">
+      {publications.map((pub, i) => (
+        <article class={`card reveal ${i % 3 === 1 ? "d1" : i % 3 === 2 ? "d2" : ""}`} data-publication-id={pub.id}>
+          <img class="card-img" src={pub.image} alt={pub.title} width="600" height="450" loading="lazy" />
+          <div class="card-body">
+            <p class="card-tag">{pub.type} &middot; {pub.year}</p>
+            <h3 class="card-title">{pub.title}</h3>
+            <p class="card-desc">{pub.summary}</p>
+            <a href={pub.fileUrl} download class="btn-ghost card-cta">Download PDF</a>
+          </div>
         </article>
       ))}
     </div>

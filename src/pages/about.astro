@@ -3,50 +3,67 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About Us">
-  <section data-section="about-hero">
-    <img src="https://picsum.photos/seed/about-hero/1400/500" alt="Agĩkũyũ community" width="1400" height="500" />
-    <h1>Who We Are</h1>
-  </section>
-
-  <section data-section="mission">
-    <div>
-      <h2>Our Mission</h2>
-      <p>
-        Agĩkũyũ Women and Men exists to preserve and promote Agĩkũyũ culture, language and identity —
-        for the people living it today and the generations who will inherit it tomorrow.
-      </p>
-    </div>
-    <img src="https://picsum.photos/seed/about-mission/700/500" alt="Mission" width="700" height="500" />
-  </section>
-
-  <section data-section="vision">
-    <img src="https://picsum.photos/seed/about-vision/700/500" alt="Vision" width="700" height="500" />
-    <div>
-      <h2>Our Vision</h2>
-      <p>
-        A thriving Agĩkũyũ community where language, stories, and traditions are actively lived,
-        taught, and celebrated — not just remembered.
-      </p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/about-hero/1600/700" alt="Agĩkũyũ community" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">About Us</p>
+      <h1 class="hero-title">Who <em>We Are</em></h1>
     </div>
   </section>
 
-  <section data-section="values">
-    <h2>What We Value</h2>
-    <div data-grid="values">
-      <article>
-        <img src="https://picsum.photos/seed/value-1/400/300" alt="Heritage" width="400" height="300" />
-        <h3>Heritage</h3>
-        <p>Honouring the history, wisdom and practices passed down through generations.</p>
+  <section class="section-wrap">
+    <div class="row-list">
+      <div class="row reveal">
+        <div>
+          <div class="eyebrow">Our Mission</div>
+          <h2 class="row-title">Preserving what makes us <em>who we are</em></h2>
+          <p class="row-desc">
+            Agĩkũyũ Women and Men exists to preserve and promote Agĩkũyũ culture, language and identity —
+            for the people living it today and the generations who will inherit it tomorrow.
+          </p>
+        </div>
+        <img src="https://picsum.photos/seed/about-mission/700/520" alt="Mission" width="700" height="520" loading="lazy" />
+      </div>
+
+      <div class="row reversed reveal">
+        <div>
+          <div class="eyebrow">Our Vision</div>
+          <h2 class="row-title">A culture <em>lived</em>, not just remembered</h2>
+          <p class="row-desc">
+            A thriving Agĩkũyũ community where language, stories, and traditions are actively lived,
+            taught, and celebrated — not just remembered.
+          </p>
+        </div>
+        <img src="https://picsum.photos/seed/about-vision/700/520" alt="Vision" width="700" height="520" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wrap" style="background: var(--bg-parchment);">
+    <div class="eyebrow center" style="justify-content:center;">What We Value</div>
+    <h2 class="section-title center">The principles that <em>guide us</em></h2>
+    <div class="grid-3" style="margin-top: 50px;">
+      <article class="card reveal">
+        <img class="card-img" src="https://picsum.photos/seed/value-1/500/375" alt="Heritage" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Heritage</h3>
+          <p class="card-desc">Honouring the history, wisdom and practices passed down through generations.</p>
+        </div>
       </article>
-      <article>
-        <img src="https://picsum.photos/seed/value-2/400/300" alt="Language" width="400" height="300" />
-        <h3>Language</h3>
-        <p>Keeping Gĩkũyũ alive as a living, spoken, and taught language.</p>
+      <article class="card reveal d1">
+        <img class="card-img" src="https://picsum.photos/seed/value-2/500/375" alt="Language" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Language</h3>
+          <p class="card-desc">Keeping Gĩkũyũ alive as a living, spoken, and taught language.</p>
+        </div>
       </article>
-      <article>
-        <img src="https://picsum.photos/seed/value-3/400/300" alt="Community" width="400" height="300" />
-        <h3>Community</h3>
-        <p>Bringing women, men, youth and children together around shared identity.</p>
+      <article class="card reveal d2">
+        <img class="card-img" src="https://picsum.photos/seed/value-3/500/375" alt="Community" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Community</h3>
+          <p class="card-desc">Bringing women, men, youth and children together around shared identity.</p>
+        </div>
       </article>
     </div>
   </section>

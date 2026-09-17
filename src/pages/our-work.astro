@@ -4,38 +4,45 @@ import Layout from "../layouts/Layout.astro";
 const workAreas = [
   {
     title: "Research Initiatives",
-    image: "https://picsum.photos/seed/work-research/700/500",
+    image: "https://picsum.photos/seed/work-research/700/520",
     description: "Ongoing research projects documenting Agĩkũyũ history, language and social life.",
   },
   {
     title: "Partnerships",
-    image: "https://picsum.photos/seed/work-partnerships/700/500",
+    image: "https://picsum.photos/seed/work-partnerships/700/520",
     description: "Collaborations with cultural institutions, schools and community organisations.",
   },
   {
     title: "Cultural Programmes",
-    image: "https://picsum.photos/seed/work-culture/700/500",
+    image: "https://picsum.photos/seed/work-culture/700/520",
     description: "Events, gatherings and initiatives that bring Agĩkũyũ culture into everyday community life.",
   },
 ];
 ---
 
 <Layout title="Our Work">
-  <section data-section="our-work-hero">
-    <img src="https://picsum.photos/seed/our-work-hero/1400/450" alt="Our Work" width="1400" height="450" />
-    <h1>Our Work</h1>
-    <p>Research, partnerships and cultural programmes — brought together in one place.</p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/our-work-hero/1600/700" alt="Our Work" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">What We Do</p>
+      <h1 class="hero-title">Our <em>Work</em></h1>
+      <p class="hero-sub">Research, partnerships and cultural programmes — brought together in one place.</p>
+    </div>
   </section>
 
-  <section data-section="work-list">
-    {workAreas.map((area, i) => (
-      <div data-row={i % 2 === 0 ? "normal" : "reversed"}>
-        <img src={area.image} alt={area.title} width="700" height="500" />
-        <div>
-          <h2>{area.title}</h2>
-          <p>{area.description}</p>
+  <section class="section-wrap">
+    <div class="row-list">
+      {workAreas.map((area, i) => (
+        <div class={`row ${i % 2 === 1 ? "reversed" : ""} reveal`}>
+          <img src={area.image} alt={area.title} width="700" height="520" loading="lazy" />
+          <div>
+            <div class="eyebrow">Focus Area</div>
+            <h2 class="row-title">{area.title}</h2>
+            <p class="row-desc">{area.description}</p>
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </section>
 </Layout>

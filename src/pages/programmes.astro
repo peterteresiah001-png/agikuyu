@@ -4,30 +4,41 @@ import { programmes } from "../data/programmes.js";
 ---
 
 <Layout title="Programmes">
-  <section data-section="programmes-hero">
-    <img src="https://picsum.photos/seed/programmes-hero/1400/450" alt="Programmes" width="1400" height="450" />
-    <h1>Programmes</h1>
-    <p>Programmes for women, men, youth, children, communities, and Gĩkũyũ language learning.</p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/programmes-hero/1600/700" alt="Programmes" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Get Involved</p>
+      <h1 class="hero-title">Our <em>Programmes</em></h1>
+      <p class="hero-sub">Programmes for women, men, youth, children, communities, and Gĩkũyũ language learning.</p>
+    </div>
   </section>
 
-  <section data-section="programmes-grid">
-    <div data-grid="programmes">
-      {programmes.map((p) => (
-        <article id={p.id} data-programme-id={p.id}>
-          <img src={p.image} alt={p.title} width="700" height="500" loading="lazy" />
-          <h3>{p.title}</h3>
-          <p>{p.description}</p>
+  <section class="section-wrap">
+    <div class="grid-3">
+      {programmes.map((p, i) => (
+        <article id={p.id} class={`card reveal ${i % 3 === 1 ? "d1" : i % 3 === 2 ? "d2" : ""}`} data-programme-id={p.id}>
+          <img class="card-img" src={p.image} alt={p.title} width="500" height="375" loading="lazy" />
+          <div class="card-body">
+            <h3 class="card-title">{p.title}</h3>
+            <p class="card-desc">{p.description}</p>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
-  <section data-section="app-notice">
-    <img src="https://picsum.photos/seed/language-app/900/400" alt="Gĩkũyũ language app coming soon" width="900" height="400" />
-    <h2>Gĩkũyũ Language Learning App — Coming Soon</h2>
-    <p>
-      Interactive lessons and modules for learning Gĩkũyũ will be delivered through a dedicated mobile app.
-      This website shares programme information only; the app itself is being planned separately.
-    </p>
+  <section class="section-wrap tight" style="background: var(--bg-navy);">
+    <div class="row" style="max-width: 1000px; margin: 0 auto; align-items: center;">
+      <img src="https://picsum.photos/seed/language-app/900/650" alt="Gĩkũyũ language app coming soon" width="900" height="650" loading="lazy" />
+      <div>
+        <div class="eyebrow" style="color: var(--gold-lt);">Coming Soon</div>
+        <h2 class="row-title" style="color: #fff;">Gĩkũyũ Language <em>Learning App</em></h2>
+        <p class="row-desc" style="color: rgba(255,255,255,0.65);">
+          Interactive lessons and modules for learning Gĩkũyũ will be delivered through a dedicated mobile app.
+          This website shares programme information only; the app itself is being planned separately.
+        </p>
+      </div>
+    </div>
   </section>
 </Layout>

@@ -4,72 +4,91 @@ import { SITE } from "../data/site.js";
 ---
 
 <Layout title="Home">
-  <section data-section="hero">
-    <img
-      src="https://picsum.photos/seed/agikuyu-hero/1600/700"
-      alt="Agĩkũyũ elders and family"
-      width="1600"
-      height="700"
-    />
-    <div>
-      <h1>Our Culture. Our Language. Our Identity.</h1>
-      <p>We preserve, promote and celebrate Agĩkũyũ wisdom for present and future generations.</p>
-      <a href="/bookshop">Explore Books</a>
-      <a href="/programmes">Learn Gĩkũyũ</a>
+  <section class="home-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/agikuyu-hero/1600/900" alt="Agĩkũyũ elders and family" width="1600" height="900" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Agĩkũyũ Women and Men</p>
+      <h1 class="hero-title">Our Culture. Our Language. <em>Our Identity.</em></h1>
+      <p class="hero-sub">We preserve, promote and celebrate Agĩkũyũ wisdom for present and future generations.</p>
+      <div class="hero-actions">
+        <a href="/bookshop" class="btn-primary">Explore Books</a>
+        <a href="/programmes#gikuyu-language" class="btn-outline">Learn Gĩkũyũ</a>
+      </div>
     </div>
   </section>
 
-  <section data-section="what-we-do">
-    <h2>What We Do</h2>
-    <div data-grid="cards">
-      <article>
-        <img src="https://picsum.photos/seed/card-bookshop/500/350" alt="Bookshop" width="500" height="350" />
-        <h3>Bookshop</h3>
-        <p>Browse and buy books on Agĩkũyũ culture, language, history, spirituality and more.</p>
-        <a href="/bookshop">Shop Now</a>
+  <section class="section-wrap">
+    <div class="eyebrow center" style="justify-content:center;">What We Do</div>
+    <h2 class="section-title center">Rooted in heritage, <em>reaching forward</em></h2>
+    <p class="section-sub center" style="margin-bottom: 56px;">
+      Five ways we work to keep Agĩkũyũ language, history and traditions alive and thriving.
+    </p>
+    <div class="grid-3">
+      <article class="card reveal">
+        <img class="card-img" src="https://picsum.photos/seed/card-bookshop/500/375" alt="Bookshop" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <p class="card-tag">Bookshop</p>
+          <h3 class="card-title">Bookshop</h3>
+          <p class="card-desc">Browse and buy books on Agĩkũyũ culture, language, history, spirituality and more.</p>
+          <a href="/bookshop" class="btn-ghost card-cta">Shop Now</a>
+        </div>
       </article>
 
-      <article>
-        <img src="https://picsum.photos/seed/card-language/500/350" alt="Learn Gĩkũyũ" width="500" height="350" />
-        <h3>Learn Gĩkũyũ</h3>
-        <p>An overview of our language-learning programme — full modules are coming via a dedicated app.</p>
-        <a href="/programmes#gikuyu-language">Learn More</a>
+      <article class="card reveal d1">
+        <img class="card-img" src="https://picsum.photos/seed/card-language/500/375" alt="Learn Gĩkũyũ" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <p class="card-tag">Language</p>
+          <h3 class="card-title">Learn Gĩkũyũ</h3>
+          <p class="card-desc">An overview of our language-learning programme — full modules are coming via a dedicated app.</p>
+          <a href="/programmes#gikuyu-language" class="btn-ghost card-cta">Learn More</a>
+        </div>
       </article>
 
-      <article>
-        <img src="https://picsum.photos/seed/card-research/500/350" alt="Research & Publications" width="500" height="350" />
-        <h3>Research &amp; Publications</h3>
-        <p>Explore our research projects, publications and academic resources.</p>
-        <a href="/research">Explore</a>
+      <article class="card reveal d2">
+        <img class="card-img" src="https://picsum.photos/seed/card-research/500/375" alt="Research & Publications" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <p class="card-tag">Research</p>
+          <h3 class="card-title">Research &amp; Publications</h3>
+          <p class="card-desc">Explore our research projects, publications and academic resources.</p>
+          <a href="/research" class="btn-ghost card-cta">Explore</a>
+        </div>
       </article>
 
-      <article>
-        <img src="https://picsum.photos/seed/card-partner/500/350" alt="Partner With Us" width="500" height="350" />
-        <h3>Partner With Us</h3>
-        <p>Partner with us to support culture, language education, research and community initiatives.</p>
-        <a href="/partner">Partner With Us</a>
+      <article class="card reveal">
+        <img class="card-img" src="https://picsum.photos/seed/card-partner/500/375" alt="Partner With Us" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <p class="card-tag">Partnership</p>
+          <h3 class="card-title">Partner With Us</h3>
+          <p class="card-desc">Partner with us to support culture, language education, research and community initiatives.</p>
+          <a href="/partner" class="btn-ghost card-cta">Partner With Us</a>
+        </div>
       </article>
 
-      <article>
-        <img src="https://picsum.photos/seed/card-programmes/500/350" alt="Programmes" width="500" height="350" />
-        <h3>Programmes</h3>
-        <p>Discover our programmes for women, men, youth, children and communities.</p>
-        <a href="/programmes">View Programmes</a>
+      <article class="card reveal d1">
+        <img class="card-img" src="https://picsum.photos/seed/card-programmes/500/375" alt="Programmes" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <p class="card-tag">Programmes</p>
+          <h3 class="card-title">Programmes</h3>
+          <p class="card-desc">Discover our programmes for women, men, youth, children and communities.</p>
+          <a href="/programmes" class="btn-ghost card-cta">View Programmes</a>
+        </div>
       </article>
     </div>
   </section>
 
-  <section data-section="gallery">
-    <h2>Gallery</h2>
-    <div data-grid="gallery">
-      <img src="https://picsum.photos/seed/gallery-1/500/500" alt="Community event" width="500" height="500" />
-      <img src="https://picsum.photos/seed/gallery-2/500/500" alt="Cultural ceremony" width="500" height="500" />
-      <img src="https://picsum.photos/seed/gallery-3/500/500" alt="Bookshop titles" width="500" height="500" />
-      <img src="https://picsum.photos/seed/gallery-4/500/500" alt="Youth workshop" width="500" height="500" />
+  <section class="section-wrap" style="background: var(--bg-parchment);">
+    <div class="eyebrow center" style="justify-content:center;">Gallery</div>
+    <h2 class="section-title center">Moments from <em>our community</em></h2>
+    <div class="gallery-grid" style="margin-top: 46px;">
+      <a href="#" class="reveal"><img src="https://picsum.photos/seed/gallery-1/500/500" alt="Community event" width="500" height="500" loading="lazy" /></a>
+      <a href="#" class="reveal d1"><img src="https://picsum.photos/seed/gallery-2/500/500" alt="Cultural ceremony" width="500" height="500" loading="lazy" /></a>
+      <a href="#" class="reveal d2"><img src="https://picsum.photos/seed/gallery-3/500/500" alt="Bookshop titles" width="500" height="500" loading="lazy" /></a>
+      <a href="#" class="reveal d3"><img src="https://picsum.photos/seed/gallery-4/500/500" alt="Youth workshop" width="500" height="500" loading="lazy" /></a>
     </div>
   </section>
 
-  <section data-section="cta-strip">
-    <p>Get in touch: {SITE.phone} · {SITE.email}</p>
+  <section class="cta-strip">
+    <p>Get in touch: <a href={`tel:${SITE.phone}`}>{SITE.phone}</a> &middot; <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
   </section>
 </Layout>

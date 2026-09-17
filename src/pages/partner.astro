@@ -3,56 +3,69 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Partner With Us">
-  <section data-section="partner-hero">
-    <img src="https://picsum.photos/seed/partner-hero/1400/450" alt="Partner With Us" width="1400" height="450" />
-    <h1>Partner With Us</h1>
-    <p>
-      We work with sponsors, collaborators and institutions who want to support culture, language
-      education, research and community initiatives.
-    </p>
+  <section class="page-hero">
+    <img class="hero-img" src="https://picsum.photos/seed/partner-hero/1600/700" alt="Partner With Us" width="1600" height="700" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Work With Us</p>
+      <h1 class="hero-title">Partner <em>With Us</em></h1>
+      <p class="hero-sub">
+        We work with sponsors, collaborators and institutions who want to support culture, language
+        education, research and community initiatives.
+      </p>
+    </div>
   </section>
 
-  <section data-section="partner-areas">
-    <div data-grid="partner-areas">
-      <article>
-        <img src="https://picsum.photos/seed/partner-1/500/350" alt="Sponsorship" width="500" height="350" />
-        <h3>Sponsorship</h3>
-        <p>Support a programme, publication, or community event.</p>
+  <section class="section-wrap">
+    <div class="grid-3">
+      <article class="card reveal">
+        <img class="card-img" src="https://picsum.photos/seed/partner-1/500/375" alt="Sponsorship" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Sponsorship</h3>
+          <p class="card-desc">Support a programme, publication, or community event.</p>
+        </div>
       </article>
-      <article>
-        <img src="https://picsum.photos/seed/partner-2/500/350" alt="Research collaboration" width="500" height="350" />
-        <h3>Research Collaboration</h3>
-        <p>Partner with us on research projects and joint publications.</p>
+      <article class="card reveal d1">
+        <img class="card-img" src="https://picsum.photos/seed/partner-2/500/375" alt="Research collaboration" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Research Collaboration</h3>
+          <p class="card-desc">Partner with us on research projects and joint publications.</p>
+        </div>
       </article>
-      <article>
-        <img src="https://picsum.photos/seed/partner-3/500/350" alt="Institutional partnership" width="500" height="350" />
-        <h3>Institutional Partnership</h3>
-        <p>Work with us as a school, museum, or cultural organisation.</p>
+      <article class="card reveal d2">
+        <img class="card-img" src="https://picsum.photos/seed/partner-3/500/375" alt="Institutional partnership" width="500" height="375" loading="lazy" />
+        <div class="card-body">
+          <h3 class="card-title">Institutional Partnership</h3>
+          <p class="card-desc">Work with us as a school, museum, or cultural organisation.</p>
+        </div>
       </article>
     </div>
   </section>
 
-  <section data-section="partner-form">
-    <h2>Partnership Enquiry</h2>
-    <form data-form="partner-enquiry">
-      <label>
-        Name
-        <input type="text" name="name" required />
-      </label>
-      <label>
-        Organisation
-        <input type="text" name="organisation" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        How would you like to partner with us?
-        <textarea name="message" rows="4" required></textarea>
-      </label>
-      <button type="submit">Send Enquiry via WhatsApp</button>
-    </form>
+  <section class="section-wrap tight" style="background: var(--bg-parchment);">
+    <div class="eyebrow center" style="justify-content:center;">Get Involved</div>
+    <h2 class="section-title center">Partnership <em>Enquiry</em></h2>
+    <div class="form-card reveal" style="margin-top: 44px;">
+      <form data-form="partner-enquiry">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Organisation
+          <input type="text" name="organisation" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          How would you like to partner with us?
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">Send Enquiry via WhatsApp</button>
+      </form>
+    </div>
   </section>
 </Layout>
 
