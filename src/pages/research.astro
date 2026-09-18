@@ -10,7 +10,7 @@ import { publications } from "../data/publications.js";
     <div class="hero-content">
       <p class="hero-eyebrow">Knowledge &amp; Scholarship</p>
       <h1 class="hero-title">Research &amp; <em>Publications</em></h1>
-      <p class="hero-sub">Read or download our research papers and articles below — freely, with no unlocking fee.</p>
+      <p class="hero-sub">Explore our research papers and articles below.</p>
     </div>
   </section>
 
@@ -23,7 +23,6 @@ import { publications } from "../data/publications.js";
             <p class="card-tag">{pub.type} &middot; {pub.year}</p>
             <h3 class="card-title">{pub.title}</h3>
             <p class="card-desc">{pub.summary}</p>
-            <a href={pub.fileUrl} download class="btn-ghost card-cta">Download PDF</a>
           </div>
         </article>
       ))}

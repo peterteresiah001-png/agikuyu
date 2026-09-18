@@ -1,4 +1,4 @@
-// Research & Publications listing — free to read/download, no paywall.
+// Research & Publications listing.
 export const publications = [
   {
     id: "land-and-identity",
@@ -8,7 +8,6 @@ export const publications = [
     image: "/images/thirteen.jpg",
     summary:
       "Examines the historical relationship between land tenure and Agĩkũyũ cultural identity.",
-    fileUrl: "/publications/land-and-identity.pdf",
   },
   {
     id: "language-preservation",
@@ -18,7 +17,6 @@ export const publications = [
     image: "/images/fourteen.jpg",
     summary:
       "Surveys community-led approaches to keeping Gĩkũyũ alive among younger generations.",
-    fileUrl: "/publications/language-preservation.pdf",
   },
   {
     id: "oral-traditions",
@@ -28,6 +26,5 @@ export const publications = [
     image: "/images/fifteen.jpg",
     summary:
       "Documents how oral storytelling continues to transmit history, values, and law.",
-    fileUrl: "/publications/oral-traditions.pdf",
   },
 ];
