@@ -5,7 +5,7 @@ export const books = [
     title: "Gĩkũyũ Proverbs and Their Meanings",
     category: "Culture",
     price: 1200,
-    image: "https://picsum.photos/seed/gikuyu-book-1/600/800",
+    image: "/images/one.jpg",
     description:
       "A collection of traditional Agĩkũyũ proverbs with English translations and context on when and how they were used.",
   },
@@ -14,7 +14,7 @@ export const books = [
     title: "A History of the Agĩkũyũ People",
     category: "History",
     price: 1800,
-    image: "https://picsum.photos/seed/gikuyu-book-2/600/800",
+    image: "/images/two.jpg",
     description:
       "An accessible history of Agĩkũyũ migration, settlement, clans, and social organisation from oral and written sources.",
   },
@@ -23,7 +23,7 @@ export const books = [
     title: "Gĩkũyũ for Beginners",
     category: "Language",
     price: 900,
-    image: "https://picsum.photos/seed/gikuyu-book-3/600/800",
+    image: "/images/three.jpg",
     description:
       "A friendly introduction to Gĩkũyũ vocabulary, greetings, and simple sentence structure for new learners.",
   },
@@ -32,7 +32,7 @@ export const books = [
     title: "Spirituality and Rites of Passage",
     category: "Spirituality",
     price: 1500,
-    image: "https://picsum.photos/seed/gikuyu-book-4/600/800",
+    image: "/images/four.jpg",
     description:
       "An exploration of traditional Agĩkũyũ belief systems, ceremonies, and rites from birth to eldership.",
   },
@@ -41,7 +41,7 @@ export const books = [
     title: "Folktales for Children",
     category: "Children",
     price: 800,
-    image: "https://picsum.photos/seed/gikuyu-book-5/600/800",
+    image: "/images/five.jpg",
     description:
       "Illustrated Agĩkũyũ folktales retold for young readers, with a short glossary of Gĩkũyũ words.",
   },
@@ -50,7 +50,7 @@ export const books = [
     title: "Women in Agĩkũyũ Society",
     category: "Culture",
     price: 1600,
-    image: "https://picsum.photos/seed/gikuyu-book-6/600/800",
+    image: "/images/six.png",
     description:
       "A look at the historical and evolving role of women within Agĩkũyũ family, economic, and community life.",
   },
