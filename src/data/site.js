@@ -2,8 +2,8 @@
 export const SITE = {
   name: "Agĩkũyũ Women and Men",
   tagline: "Preserving our knowledge. Promoting our language. Connecting generations.",
-  phone: "+254700000000", // TODO: replace with real number
-  whatsappNumber: "254700000000", // digits only, no + , used for wa.me links
+  phone: "+254722103314",
+  whatsappNumber: "254722103314", // digits only, no + , used for wa.me links
   email: "info@agikuyuwomenandmen.org",
   location: "Kiambu County, Kenya",
   social: {
