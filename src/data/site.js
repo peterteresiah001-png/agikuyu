@@ -1,17 +1,27 @@
-// Central place to edit contact details — used across the whole site.
+// Central place for contact details — used across the whole site.
 export const SITE = {
-  name: "Agĩkũyũ Women and Men",
-  tagline: "Preserving our knowledge. Promoting our language. Connecting generations.",
-  phone: "+254722103314",
-  whatsappNumber: "254722103314", // digits only, no + , used for wa.me links
-  email: "info@agikuyuwomenandmen.org",
-  location: "Kiambu County, Kenya",
-  social: {
-    facebook: "https://facebook.com/",
-    instagram: "https://instagram.com/",
-    twitter: "https://twitter.com/",
-    youtube: "https://youtube.com/",
+  name: "Agìkūyū Women & Men",
+  tagline: "Retrieve. Re-evaluate. Replenish. Document. Celebrate.",
+
+  // One number for calls and WhatsApp.
+  phone: "+254790224189",
+  whatsappNumber: "254790224189", // digits only (no "+"), used for wa.me links
+  email: "gikuyuandmumbiwomen@gmail.com",
+
+  contactPerson: {
+    name: "Wambūi MN",
+    role: "Gìkūyū Language Teacher and Program Coordinator",
+    organisation: "Gìkūyū and Mūmbi Women & Men",
   },
+
+  // `url` is left empty where the real link is not known yet — those entries show as
+  // plain text. Paste the full profile URL to turn them into links everywhere.
+  social: [
+    { id: "facebook",  label: "Facebook",  short: "FB", handle: "Gìkūyū and Mūmbi Women & Men", url: "" },
+    { id: "twitter",   label: "Twitter",   short: "TW", handle: "@AgikuyuWomen",                url: "https://twitter.com/AgikuyuWomen" },
+    { id: "instagram", label: "Instagram", short: "IG", handle: "AgìkūyūWomen",                 url: "" },
+    { id: "youtube",   label: "YouTube",   short: "YT", handle: "Gìkūyū and Mūmbi Women",       url: "" },
+  ],
 };
 
 // Builds a wa.me link with a prefilled message.
@@ -19,3 +29,16 @@ export function whatsappLink(message) {
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${SITE.whatsappNumber}?text=${encoded}`;
 }
+
+// Topics for the contact form (and the ?topic= links used on other pages).
+export const CONTACT_TOPICS = [
+  { value: "research-consultancy",  label: "Research Consultancy" },
+  { value: "research-sponsorship",  label: "Research Sponsorship" },
+  { value: "membership",            label: "Membership" },
+  { value: "partnership",           label: "Partnership" },
+  { value: "cultural-programme",    label: "Cultural Programme" },
+  { value: "publications",          label: "Publications" },
+  { value: "language",              label: "Gìkūyū Language" },
+  { value: "donation",              label: "Donation / Supporting Our Work" },
+  { value: "general",               label: "General Enquiry" },
+];

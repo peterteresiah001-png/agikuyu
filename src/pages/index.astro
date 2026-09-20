@@ -1,94 +1,117 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BookCover from "../components/BookCover.astro";
 import { SITE } from "../data/site.js";
+import { books } from "../data/books.js";
+
+const featured = books.slice(0, 4);
+const steps = ["Retrieve", "Re-evaluate", "Replenish", "Document", "Celebrate"];
 ---
 
-<Layout title="Home">
+<Layout title="Home" description="Agìkūyū Women & Men — retrieving, re-evaluating, replenishing, documenting and celebrating Agìkūyū history, heritage, culture and Gìkūyū language.">
   <section class="home-hero">
-    <img class="hero-img" src="/images/eight.jpg" alt="Agĩkũyũ elders and family" width="1600" height="900" />
+    <img class="hero-img" src="/images/ten.jpg" alt="" width="1600" height="900" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Agĩkũyũ Women and Men</p>
-      <h1 class="hero-title">Our Culture. Our Language. <em>Our Identity.</em></h1>
-      <p class="hero-sub">We preserve, promote and celebrate Agĩkũyũ wisdom for present and future generations.</p>
+      <p class="hero-eyebrow">{SITE.name}</p>
+      <h1 class="hero-title">Retrieve. Re-evaluate. Replenish. Document. <em>Celebrate.</em></h1>
+      <p class="hero-sub">Agìkūyū history, heritage, culture and Gìkūyū language.</p>
       <div class="hero-actions">
-        <a href="/bookshop" class="btn-primary">Explore Books</a>
-        <a href="/programmes#gikuyu-language" class="btn-outline">Learn Gĩkũyũ</a>
+        <a href="/bookshop" class="btn-primary">Explore the Bookshop</a>
+        <a href="/language" class="btn-outline">Learn Gìkūyū</a>
       </div>
     </div>
   </section>
 
   <section class="section-wrap">
-    <div class="eyebrow center" style="justify-content:center;">What We Do</div>
-    <h2 class="section-title center">Rooted in heritage, <em>reaching forward</em></h2>
-    <p class="section-sub center" style="margin-bottom: 56px;">
-      Five ways we work to keep Agĩkũyũ language, history and traditions alive and thriving.
+    <div class="row reveal">
+      <div>
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="row-title">A cultural heritage initiative, <em>founded in 2017</em></h2>
+        <p class="row-desc">
+          Agìkūyū Women and Men is a cultural heritage initiative founded in 2017 and formally registered in 2018
+          with a shared vision: to safeguard the wisdom, traditions, history, language and identity of the Agìkūyū people.
+        </p>
+        <p style="margin-top: 26px;"><a href="/about" class="btn-ghost">Read About Us</a></p>
+      </div>
+      <img src="/images/thirteen.jpg" alt="Archival photograph of three elders" width="700" height="520" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section-wrap tight tinted">
+    <div class="eyebrow center" style="justify-content:center;">Our Mission</div>
+    <h2 class="section-title center">Five steps to <em>safeguard our heritage</em></h2>
+    <ol class="steps-strip reveal">
+      {steps.map((s, i) => (
+        <li><span class="step-num">{String(i + 1).padStart(2, "0")}</span><span class="step-name">{s}</span></li>
+      ))}
+    </ol>
+    <p class="section-sub center reveal" style="max-width: 720px;">
+      Our mission is to Retrieve, Re-evaluate, Replenish, Document, and to Celebrate Agìkūyū culture, history,
+      and Gìkūyū language so that current and future generations can understand, honor, and carry forward
+      their heritage with pride.
     </p>
-    <div class="grid-3">
-      <article class="card reveal">
-        <img class="card-img" src="/images/nine.jpg" alt="Bookshop" width="500" height="375" loading="lazy" />
+  </section>
+
+  <section class="section-wrap">
+    <div class="eyebrow center" style="justify-content:center;">Explore</div>
+    <h2 class="section-title center">Ways to <em>engage with us</em></h2>
+    <div class="grid-4" style="margin-top: 50px;">
+      <article class="card plain reveal">
         <div class="card-body">
           <p class="card-tag">Bookshop</p>
           <h3 class="card-title">Bookshop</h3>
-          <p class="card-desc">Browse and buy books on Agĩkũyũ culture, language, history, spirituality and more.</p>
-          <a href="/bookshop" class="btn-ghost card-cta">Shop Now</a>
+          <p class="card-desc">Books and publications that contribute to the preservation, study and enjoyment of Agìkūyū and African history, culture, language, religion, literature and indigenous knowledge.</p>
+          <a href="/bookshop" class="btn-ghost card-cta">Visit the Bookshop</a>
         </div>
       </article>
-
-      <article class="card reveal d1">
-        <img class="card-img" src="/images/ten.jpg" alt="Learn Gĩkũyũ" width="500" height="375" loading="lazy" />
+      <article class="card plain reveal d1">
+        <div class="card-body">
+          <p class="card-tag">Research &amp; Heritage</p>
+          <h3 class="card-title">Our Work</h3>
+          <p class="card-desc">The research, documentation, knowledge-sharing, partnerships and cultural initiatives through which we advance our mission.</p>
+          <a href="/our-work" class="btn-ghost card-cta">See Our Work</a>
+        </div>
+      </article>
+      <article class="card plain reveal d2">
         <div class="card-body">
           <p class="card-tag">Language</p>
-          <h3 class="card-title">Learn Gĩkũyũ</h3>
-          <p class="card-desc">An overview of our language-learning programme — full modules are coming via a dedicated app.</p>
-          <a href="/programmes#gikuyu-language" class="btn-ghost card-cta">Learn More</a>
+          <h3 class="card-title">Gìkūyū Language Initiative</h3>
+          <p class="card-desc">Virtual Gìkūyū language classes for adults aged 20 years and above — a structured pathway from beginner to advanced proficiency.</p>
+          <a href="/language" class="btn-ghost card-cta">Learn Gìkūyū</a>
         </div>
       </article>
-
-      <article class="card reveal d2">
-        <img class="card-img" src="/images/eleven.jpg" alt="Research & Publications" width="500" height="375" loading="lazy" />
+      <article class="card plain reveal d3">
         <div class="card-body">
-          <p class="card-tag">Research</p>
-          <h3 class="card-title">Research &amp; Publications</h3>
-          <p class="card-desc">Explore our research projects, publications and academic resources.</p>
-          <a href="/research" class="btn-ghost card-cta">Explore</a>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <img class="card-img" src="/images/twelve.jpg" alt="Partner With Us" width="500" height="375" loading="lazy" />
-        <div class="card-body">
-          <p class="card-tag">Partnership</p>
+          <p class="card-tag">Get Involved</p>
           <h3 class="card-title">Partner With Us</h3>
-          <p class="card-desc">Partner with us to support culture, language education, research and community initiatives.</p>
-          <a href="/partner" class="btn-ghost card-cta">Partner With Us</a>
-        </div>
-      </article>
-
-      <article class="card reveal d1">
-        <img class="card-img" src="/images/thirteen.jpg" alt="Programmes" width="500" height="375" loading="lazy" />
-        <div class="card-body">
-          <p class="card-tag">Programmes</p>
-          <h3 class="card-title">Programmes</h3>
-          <p class="card-desc">Discover our programmes for women, men, youth, children and communities.</p>
-          <a href="/programmes" class="btn-ghost card-cta">View Programmes</a>
+          <p class="card-desc">Sponsor our research, donate, or partner with us in the work of preserving and advancing Agìkūyū heritage.</p>
+          <a href="/partner" class="btn-ghost card-cta">Join the Journey</a>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="section-wrap" style="background: var(--bg-parchment);">
-    <div class="eyebrow center" style="justify-content:center;">Gallery</div>
-    <h2 class="section-title center">Moments from <em>our community</em></h2>
-    <div class="gallery-grid" style="margin-top: 46px;">
-      <a href="#" class="reveal"><img src="/images/fourteen.jpg" alt="Community event" width="500" height="500" loading="lazy" /></a>
-      <a href="#" class="reveal d1"><img src="/images/fifteen.jpg" alt="Cultural ceremony" width="500" height="500" loading="lazy" /></a>
-      <a href="#" class="reveal d2"><img src="/images/sixteen.jpg" alt="Bookshop titles" width="500" height="500" loading="lazy" /></a>
-      <a href="#" class="reveal d3"><img src="/images/one.jpg" alt="Youth workshop" width="500" height="500" loading="lazy" /></a>
+  <section class="section-wrap tinted">
+    <div class="eyebrow center" style="justify-content:center;">From the Bookshop</div>
+    <h2 class="section-title center">Books that carry <em>memory and knowledge</em></h2>
+    <div class="grid-4 books" style="margin-top: 50px;">
+      {featured.map((book, i) => (
+        <a class={`card book-card reveal ${i % 4 === 1 ? "d1" : i % 4 === 2 ? "d2" : i % 4 === 3 ? "d3" : ""}`} href={`/bookshop/${book.id}`}>
+          <BookCover book={book} />
+          <div class="card-body">
+            <h3 class="card-title">{book.title}</h3>
+            <p class="card-author">{book.author}</p>
+            <p class="card-price">Ksh {book.price.toLocaleString("en-US")}</p>
+          </div>
+        </a>
+      ))}
     </div>
+    <p style="text-align:center; margin-top: 44px;"><a href="/bookshop" class="btn-primary">View All Books</a></p>
   </section>
 
   <section class="cta-strip">
-    <p>Get in touch: <a href={`tel:${SITE.phone}`}>{SITE.phone}</a> &middot; <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+    <p>Have a question, an idea, a research project or an opportunity to collaborate?<br />
+      <a href="/contact">Send us a message</a> &middot; <a href={`tel:${SITE.phone}`}>{SITE.phone}</a> &middot; <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
   </section>
 </Layout>

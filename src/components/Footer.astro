@@ -15,32 +15,33 @@ import { SITE } from "../data/site.js";
         <ul>
           <li><a href="/about">About Us</a></li>
           <li><a href="/bookshop">Bookshop</a></li>
-          <li><a href="/programmes">Programmes</a></li>
-          <li><a href="/research">Research &amp; Publications</a></li>
+          <li><a href="/our-work">Our Work</a></li>
+          <li><a href="/language">Gìkūyū Language Initiative</a></li>
           <li><a href="/partner">Partner With Us</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/contact">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
-        <p>{SITE.email}</p>
-        <p>{SITE.phone}</p>
-        <p>{SITE.location}</p>
+        <p>{SITE.contactPerson.name}</p>
+        <p>{SITE.contactPerson.role}</p>
+        <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+        <p><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></p>
       </div>
 
-      <div class="footer-col footer-newsletter">
-        <div class="footer-col-title">Stay Connected</div>
-        <form action="#" method="post" data-form="newsletter">
-          <input type="email" name="email" placeholder="Your email address" required />
-          <button type="submit">Join</button>
-        </form>
-        <div class="footer-socials">
-          <a href={SITE.social.facebook} aria-label="Facebook">FB</a>
-          <a href={SITE.social.instagram} aria-label="Instagram">IG</a>
-          <a href={SITE.social.twitter} aria-label="Twitter">TW</a>
-          <a href={SITE.social.youtube} aria-label="YouTube">YT</a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Follow Us</div>
+        <ul class="footer-social-list">
+          {SITE.social.map((s) => (
+            <li>
+              <span class="fs-label">{s.label}</span>
+              {s.url
+                ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.handle}</a>
+                : <span class="fs-handle">{s.handle}</span>}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
 
@@ -49,13 +50,3 @@ import { SITE } from "../data/site.js";
     </div>
   </div>
 </footer>
-
-<script>
-  document.querySelectorAll('form[data-form="newsletter"]').forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thanks for subscribing! (connect this form to your email list provider)");
-      (form as HTMLFormElement).reset();
-    });
-  });
-</script>

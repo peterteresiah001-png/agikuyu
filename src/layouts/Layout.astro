@@ -5,7 +5,7 @@ import ContactFab from "../components/ContactFab.astro";
 import { SITE } from "../data/site.js";
 import "../styles/global.css";
 
-const { title, description } = Astro.props;
+const { title, description, solidNav = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +20,7 @@ const { title, description } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <Nav />
+    <Nav solid={solidNav} />
     <main>
       <slot />
     </main>
