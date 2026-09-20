@@ -264,7 +264,7 @@ a[data-whatsapp-cta]:hover { transform: translateY(-1px); opacity: 0.9; }
 /* ==========================================================================
    Contact FAB — fixed bottom-right call / WhatsApp launcher
    ========================================================================== */
-.contact-fab { position: fixed; right: 22px; bottom: 22px; z-index: 400; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.contact-fab { position: fixed; right: 22px; bottom: 22px; z-index: 400; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
 
 .fab-main {
   position: relative;
@@ -306,56 +306,56 @@ a[data-whatsapp-cta]:hover { transform: translateY(-1px); opacity: 0.9; }
 .fab-options {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 12px;
   pointer-events: none;
 }
 
+/* Labelled pill: icon + name */
 .fab-option {
   position: relative;
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; gap: 12px;
+  height: 48px;
+  padding: 0 22px 0 5px;
+  border-radius: 999px;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(43,28,18,0.28);
+  white-space: nowrap;
+  box-shadow: 0 8px 22px rgba(43,28,18,0.30);
   opacity: 0;
-  transform: translateY(14px) scale(0.7);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transform: translateY(14px) scale(0.85);
+  transform-origin: right center;
+  transition: opacity 0.28s ease, transform 0.28s ease, filter 0.2s ease;
 }
 .contact-fab.open .fab-option { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
 .contact-fab.open .fab-whatsapp { transition-delay: 0.04s; }
 .contact-fab.open .fab-call { transition-delay: 0.1s; }
+.fab-option:hover { filter: brightness(1.07); }
+.fab-option:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
+
+.fab-glyph {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.fab-label {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
 .fab-whatsapp { background: linear-gradient(145deg, #3fd873, #25c25e); }
-.fab-whatsapp:hover { background: linear-gradient(145deg, #35c766, #1fae53); }
 .fab-call { background: linear-gradient(145deg, var(--navy-mid), var(--navy)); }
-.fab-call:hover { filter: brightness(1.1); }
-
-.fab-tooltip {
-  position: absolute;
-  right: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--navy);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: 5px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-.fab-option:hover .fab-tooltip { opacity: 1; }
 
 @media (max-width: 768px) {
   .contact-fab { right: 16px; bottom: 16px; gap: 12px; }
   .fab-main { width: 54px; height: 54px; }
-  .fab-option { width: 44px; height: 44px; }
-  .fab-tooltip { display: none; }
+  .fab-option { height: 44px; padding-right: 18px; }
+  .fab-glyph { width: 34px; height: 34px; }
+  .fab-label { font-size: 11px; }
 }
 
 
