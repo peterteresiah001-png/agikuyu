@@ -35,8 +35,11 @@ const aboutSlides = [
 ];
 
 // "Moments" gallery marquee rows.
-const momentsA = ["ten", "five", "fifteen", "three", "nine", "four"];
-const momentsB = ["seven", "two", "sixteen", "thirteen", "fourteen", "eleven", "one"];
+const momentsA = ["ten", "five", "three", "nine", "four"];
+const momentsB = ["seven", "two", "thirteen", "eleven", "one"];
+// Optimized copies live in /images/slides; the archival scans use the originals in /images.
+const optimized = ["ten", "five", "three", "nine", "four", "two"];
+const momentSrc = (n) => (optimized.includes(n) ? `/images/slides/${n}.jpg` : `/images/${n}.jpg`);
 const momentAlt = {
   ten: "Women in traditional dress singing together",
   nine: "Women in traditional orange dress standing together",
@@ -44,9 +47,6 @@ const momentAlt = {
   four: "Traditional foods laid out on a table",
   three: "Community members with arms raised in prayer in a green field",
   two: "Community members gathered outdoors",
-  fifteen: "A community gathering indoors",
-  sixteen: "A community gathering indoors",
-  fourteen: "A community gathering indoors",
   seven: "Archival portrait of a woman",
   one: "Archival portrait of a woman",
   thirteen: "Archival photograph of three elders",
@@ -173,15 +173,15 @@ const momentAlt = {
     <h2 class="section-title light center">Our people, <em>our story</em></h2>
     <div class="marquee" aria-label="Photo gallery">
       <div class="marquee-track">
-        {[...momentsA, ...momentsA].map((n, i) => (
-          <figure class="moment" aria-hidden={i >= momentsA.length ? "true" : undefined}><img src={`/images/slides/thumb/${n}.jpg`} alt={i >= momentsA.length ? "" : momentAlt[n]} height="240" decoding="async" /></figure>
+        {[...momentsA, ...momentsA, ...momentsA, ...momentsA].map((n, i) => (
+          <figure class="moment" aria-hidden={i >= momentsA.length ? "true" : undefined}><img src={momentSrc(n)} alt={i >= momentsA.length ? "" : momentAlt[n]} height="240" decoding="async" /></figure>
         ))}
       </div>
     </div>
     <div class="marquee reverse" aria-hidden="true">
       <div class="marquee-track">
-        {[...momentsB, ...momentsB].map((n) => (
-          <figure class="moment"><img src={`/images/slides/thumb/${n}.jpg`} alt="" height="240" decoding="async" /></figure>
+        {[...momentsB, ...momentsB, ...momentsB, ...momentsB].map((n) => (
+          <figure class="moment"><img src={momentSrc(n)} alt="" height="240" decoding="async" /></figure>
         ))}
       </div>
     </div>
