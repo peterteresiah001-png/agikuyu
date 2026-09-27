@@ -399,14 +399,14 @@ a[data-whatsapp-cta]:hover { transform: translateY(-1px); opacity: 0.9; }
 /* ---------- book covers & cards ---------- */
 .cover-img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .cover { container-type: inline-size; position: relative; overflow: hidden; width: 100%; aspect-ratio: 3 / 4; }
-.cover-frame { position: absolute; inset: 5cqw; border: 1px solid rgba(245,228,184,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8cqw 7cqw; gap: 6cqw; }
+.cover-frame { position: absolute; inset: 1.5cqw; border: 1px solid rgba(245,228,184,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4cqw 3.5cqw; gap: 6cqw; }
 .cover-orn { display: block; position: relative; width: 16cqw; height: 1px; background: var(--gold-lt); flex-shrink: 0; }
 .cover-orn::before { content: ''; position: absolute; left: 50%; top: 50%; width: 2.4cqw; height: 2.4cqw; background: var(--gold-lt); transform: translate(-50%, -50%) rotate(45deg); }
 .cover-title { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #fff9ec; line-height: 1.15; overflow-wrap: anywhere; }
-.cover-title.lg { font-size: 11cqw; }
-.cover-title.md { font-size: 8.6cqw; }
-.cover-title.sm { font-size: 7cqw; }
-.cover-author { font-family: 'Cinzel', serif; font-size: 3.8cqw; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-pale); }
+.cover-title.lg { font-size: 12.5cqw; }
+.cover-title.md { font-size: 9.8cqw; }
+.cover-title.sm { font-size: 8cqw; }
+.cover-author { font-family: 'Cinzel', serif; font-size: 4.2cqw; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-pale); }
 .cover.tone-0 { background: linear-gradient(160deg, #5a2a17, #2b1c12); }
 .cover.tone-1 { background: linear-gradient(160deg, #7a4a12, #3d2a1a); }
 .cover.tone-2 { background: linear-gradient(160deg, #3f5a3a, #1f2d1c); }
