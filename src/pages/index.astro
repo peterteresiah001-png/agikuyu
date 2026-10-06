@@ -17,21 +17,37 @@ const heroSlides = [
   { src: "/images/slides/two.jpg",   x: "2%",  y: "-3%", origin: "50% 45%" },
 ];
 
-// Floating gold embers (deterministic so the build is stable).
-const embers = Array.from({ length: 18 }, (_, i) => ({
-  left: (i * 37 + 7) % 100,
-  size: 3 + ((i * 5) % 6),
-  dur: 9 + ((i * 7) % 11),
-  delay: -((i * 3.3) % 14),
-  drift: ((i % 2 ? 1 : -1) * (20 + ((i * 11) % 60))),
-}));
+// Rising heritage objects — the clay pot and the cowrie-shell gourd rattle (two views) drifting
+// upward through the hero. These are transparent cut-outs of the real objects (/public/images/motifs).
+// `w` is the display width in px, `tilt` the resting rotation. Deterministic so the build is stable.
+const motifKinds = [
+  { src: "/images/motifs/pot.webp",         ratio: 268 / 260, w: 98,  tilt: 0 },
+  { src: "/images/motifs/rattle-flat.webp", ratio: 307 / 520, w: 190, tilt: -38 },
+  { src: "/images/motifs/rattle-tall.webp", ratio: 810 / 200, w: 58,  tilt: 8 },
+];
+const heroMotifs = Array.from({ length: 11 }, (_, i) => {
+  const k = motifKinds[i % motifKinds.length];
+  const scale = 0.8 + ((i * 7) % 5) * 0.1; // 0.8 – 1.2
+  const w = Math.round(k.w * scale);
+  return {
+    src: k.src,
+    left: (i * 37 + 7) % 92,
+    w,
+    h: Math.round(w * k.ratio),
+    dur: 16 + ((i * 7) % 11),
+    delay: -((i * 3.3) % 16),
+    drift: (i % 2 ? 1 : -1) * (20 + ((i * 11) % 60)),
+    tilt: k.tilt,
+    spin: i % 2 ? 14 : -14,
+  };
+});
 
 // "Who We Are" image slider.
 const aboutSlides = [
-  { src: "/images/thirteen.jpg", alt: "Archival photograph of three elders", pos: "50% 50%" },
-  { src: "/images/seven.jpg",    alt: "Archival portrait of a woman with a child on her back", pos: "50% 22%" },
-  { src: "/images/eleven.jpg",   alt: "Archival photograph outside a traditional homestead", pos: "50% 50%" },
-  { src: "/images/one.jpg",      alt: "Archival portrait of a woman carrying a bundle of leaves", pos: "50% 25%" },
+  { src: "/images/zeroone.png",   alt: "Archival photograph of three elders", pos: "50% 50%" },
+  { src: "/images/zerotwo.png",  alt: "Archival portrait of a woman with a child on her back", pos: "50% 22%" },
+  { src: "/images/zerothree.png", alt: "Archival photograph outside a traditional homestead", pos: "50% 50%" },
+  { src: "/images/zerofour.png", alt: "Archival portrait of a woman carrying a bundle of leaves", pos: "50% 25%" },
 ];
 
 // "Moments" gallery marquee rows.
@@ -65,9 +81,17 @@ const momentAlt = {
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-glow" aria-hidden="true"><span class="glow g1"></span><span class="glow g2"></span><span class="glow g3"></span></div>
-    <div class="hero-embers" aria-hidden="true">
-      {embers.map((e) => (
-        <span style={`left:${e.left}%;width:${e.size}px;height:${e.size}px;animation-duration:${e.dur}s;animation-delay:${e.delay}s;--drift:${e.drift}px;`}></span>
+    <div class="hero-motifs" aria-hidden="true">
+      {heroMotifs.map((m) => (
+        <img
+          src={m.src}
+          alt=""
+          width={m.w}
+          height={m.h}
+          loading="lazy"
+          decoding="async"
+          style={`left:${m.left}%;--w:${m.w};--h:${m.h};animation-duration:${m.dur}s;animation-delay:${m.delay}s;--drift:${m.drift}px;--tilt:${m.tilt}deg;--spin:${m.spin}deg;`}
+        />
       ))}
     </div>
     <div class="hero-content">
